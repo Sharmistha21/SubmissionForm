@@ -10,9 +10,9 @@ function App() {
   const [contact,setContact]=useState("");
   const [gender,setGender]=useState("male");
   const [bestSubject,setBestSubject]=useState({
-    English:true,
-    Maths:false,
-    Physics:false
+    english:true,
+    maths:false,
+    physics:false
   })
 
   const [resume,setResume]=useState("");
@@ -90,6 +90,14 @@ function App() {
            Female
            <input type="radio" name="gender" id="other" value="other" checked={gender==="other"} onChange={(e)=>setGender(e.target.value)}/>
            Other
+
+           <label htmlFor="lang">Your best Subject</label>
+           <input type="checkbox" name="lang" id="english" checked={bestSubject.english===true} onChange={(e)=>handleSubjectChange("english")}/>
+           English
+           <input type="checkbox" name="lang" id="maths" checked={bestSubject.maths===true} onChange={(e)=>handleSubjectChange("maths")}/>
+           Maths
+           <input type="checkbox" name="lang" id="physics" checked={bestSubject.physics===true} onChange={(e)=>handleSubjectChange("physics")}/>
+           Physics
 
 
         </form>
