@@ -99,6 +99,25 @@ function App() {
            <input type="checkbox" name="lang" id="physics" checked={bestSubject.physics===true} onChange={(e)=>handleSubjectChange("physics")}/>
            Physics
 
+           <label htmlFor="file">Upload resume*</label>
+           <input 
+             type="file"
+             id="file"
+             name="file"
+             onChange={
+              (e)=>setResume(e.target.files[0])
+             }
+             placeholder="Enter upload file"
+             required/>
+
+             <label htmlFor="url">Enter Url*</label>
+             <input 
+               type="url"
+               name="url"
+               id="url"
+               onChange={(e)=>setUrl(e.target.value)}
+               placeholder="Enter Url"
+               required/>
 
         </form>
       </fieldset>
