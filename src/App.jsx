@@ -118,7 +118,42 @@ function App() {
                onChange={(e)=>setUrl(e.target.value)}
                placeholder="Enter Url"
                required/>
-
+              <label>Select your choice</label>
+              <select 
+                name="select"
+                id="select"
+                value={choice}
+                onChange={(e)=>setChoice(e.target.value)}>
+                <option value="" disabled>
+                   Select your ans
+                </option>
+                <optgroup label="Beginners">
+                  <option value="1">HTML</option>
+                  <option value="2">CSS</option>
+                  <option value="3">Javascript</option>
+                </optgroup>
+                <optgroup label="Advance">
+                  <option value="4">React</option>
+                  <option value="5">Node</option>
+                  <option value="6">Express</option>
+                  <option value="t">MongoDB</option>
+                </optgroup>
+              </select>
+              <label htmlFor="about">
+              </label>
+              <textarea
+                name="about"
+                id="about"
+                cols="30"
+                rows="10"
+                onChange={(e)=>setAbout(e.target.value)}
+                placeholder="About your self"
+                required
+                ></textarea>
+                <button type="reset" value="reset" onClick={()=>handleRest()}>Reset</button>
+                <button type="submit" value="submit" onClick={(e)=>handleSubmit(e)}>
+                  Submit
+                </button>
         </form>
       </fieldset>
        
